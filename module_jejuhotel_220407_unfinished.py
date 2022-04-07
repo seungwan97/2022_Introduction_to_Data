@@ -1,5 +1,5 @@
 import os.path #path경로를 가져오기 위한 모듈
-path= "module_jejuhotel_220407.py"
+path= "module_jejuhotel_220407_unfinished.py"
 print(os.path.isfile(path)) #path변수에 저장되어 있는 파일이 존재하는지 여부
 
 XXX=open("제주관광호텔업.txt",'r',encoding='UTF-8')
