@@ -1,0 +1,41 @@
+datetime
+
+: import datetime으로 실행
+: '날짜'와 '시간'을 다루기 워한 다양한 '클래스'를 갖추고 있음
+: 변수 = datetime.datetime(년, 월, 일, 시, 분, 초) (시분초는 생략가능)
+: 변수 = datetime.datetime.now() #지금 순간의 날짜와 시간을 출력하고자 할때
+: 현재시간datetime함수 - 지정시간datetime함수 =>timedelta(날짜 간 차이 의미)라는 값 출력
+: timedelta를 datetime에 더해주는 것도 가능
+: datetime에서 '년'이나 '월'같은 값을 추출하고 싶을 때
+  - datetime을설정한변수.year #연도
+  - datetime을설정한변수.month #월
+  - datetime을설정한변수.day #일
+  - datetime을설정한변수.hour #시
+  - datetime을설정한변수.minute #분
+  - datetime을설정한변수.secoun #초
+  - datetime을설정한변수.microsecond #마이크로초
+: datetime 포맷팅 => strftime
+  print(datetime을설정한변수.strftime("%A, %B, %dth %Y)
+  ex),2020-04-05 18:09:55.233501 => Sunday, April 05th 2020
+: datetime 포맷코드 종류
+  %a 요일(짧은버전) / %A 요일(풀버전) / %w 요일(숫자버전,0~6,0이 일요일 / 
+  %d 일(01~31) / %b 월(짧은버전) /  %B 월(풀버전) /  %m 월(숫자버전, 01~12) / 
+  %y 연도(짧은 버전) / %Y 연도(풀버전) / %H 시간(00~23) / %l 시간(00~12) / 
+  %p AM/PM /  %M 분(00~59) /  %S 초(00~59) /  %f 마이크로초(000000~999999)/
+  %Z 표준시간대(ex.PST) /  %j 1년중 며칠째인지 (001~366) /
+  %U 1년 중 몇 주째인지(00~53, 일요일이 한 주의 시작이라고 가정)/ 
+  %W 1년 중 몇 주째인지(00~53, 월요일이 한 주의 시작이라고 가정)/
+: utc => 서버나 컴퓨터의 시간에 상관없이 정확한 시간/날짜를 얻는 바업ㅂ
+  ex)datetime.datetime.utcnow()
+
+
+
+
+random
+
+: import random으로 실행
+: 랜덤한 숫자를 생성하기 위한 다양한 함수 제공
+: random.randint : 두 수 사이의 랜덤한 정수를 리턴하는 함수
+  ex) a<N<=b 일경우, 이 조건을 만족하는 정수 N 리턴
+: random.uniform : 두 수 사이의 랜덤한 소수를 리턴하는 함수
+  ex) a<N<=b 일경우, 이 조건을 만족하는 소수 N 리턴
