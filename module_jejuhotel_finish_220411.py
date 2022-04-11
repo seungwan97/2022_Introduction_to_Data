@@ -1,5 +1,5 @@
 import os.path #path경로를 가져오기 위한 모듈
-path= "module_jejuhotel_220408.py"
+path= "module_jejuhotel_finish_220411.py"
 print(os.path.isfile(path)) #path변수에 저장되어 있는 파일이 존재하는지 여부
 
 XXX=open("제주관광호텔업.txt",'r',encoding='UTF-8')
@@ -23,10 +23,10 @@ def hoteljeju_to_list(x): #해당도시의 호텔목록을 나타내는 함수 #
     rooms=[]
     money = []
     for i in open("제주관광호텔업.txt",'r',encoding='UTF-8').readlines():
-        if x == "제주시":
+        if x == "제주시" or x == "제주":
             if "관광호텔업" and "도 제주시" in i:
                 list_1.append(i)
-        elif x == "서귀포시":
+        elif x == "서귀포시" or x == "서귀포":
             if "관광호텔업" and "도 서귀포시" in i:
                 list_1.append(i)
     for i in list_1:
@@ -59,10 +59,10 @@ def hotel_n_money_dict(x): #해당도시의 호텔당 1박 숙박료 #매개변�
         list_3 = []
 
         for i in open("제주관광호텔업.txt", 'r', encoding='UTF-8').readlines():
-            if x == "제주시":
+            if x == "제주시" or x == "제주":
                 if "관광호텔업" and "도 제주시" in i:
                     list_1.append(i)
-            elif x == "서귀포시":
+            elif x == "서귀포시" or x == "서귀포":
                 if "관광호텔업" and "도 서귀포시" in i:
                     list_1.append(i)
         for i in list_1:
@@ -97,10 +97,10 @@ def hotel_to_star(x,y): #해당 도시의 성급에 따른 분류 #매개변수(
         list_3 = []
 
         for i in open("제주관광호텔업.txt", 'r', encoding='UTF-8').readlines():
-            if x == "제주시":
+            if x == "제주시" or x == "제주":
                 if "관광호텔업" and "도 제주시" in i:
                     list_1.append(i)
-            elif x == "서귀포시":
+            elif x == "서귀포시" or x == "서귀포":
                 if "관광호텔업" and "도 서귀포시" in i:
                     list_1.append(i)
         for i in list_1:
@@ -115,23 +115,23 @@ def hotel_to_star(x,y): #해당 도시의 성급에 따른 분류 #매개변수(
     hoteljeju_to_list()
     hotel_n_money = {hotelname: roomcount for hotelname, roomcount in zip(hotel, list(map(int, money)))}
     hotel_n_rooms = {hotelname: roomcount for hotelname, roomcount in zip(hotel, list(map(int, rooms)))}
-    if y == "1성":
+    if y == "1성" or y == "1":
         for i in hotel_n_money.keys():
             if hotel_n_rooms[i] < 50:
                 star1[i] = hotel_n_money[i]
-    elif y == "2성":
+    elif y == "2성" or y == "2":
         for i in hotel_n_money.keys():
             if 50 <= hotel_n_rooms[i] < 100:
                 star2[i] = hotel_n_money[i]
-    elif y == "3성":
+    elif y == "3성" or y == "3":
         for i in hotel_n_money.keys():
             if 100 <= hotel_n_rooms[i] < 150:
                 star3[i] = hotel_n_money[i]
-    elif y == "4성":
+    elif y == "4성" or y == "4":
         for i in hotel_n_money.keys():
             if 150 <= hotel_n_rooms[i] < 200:
                 star4[i] = hotel_n_money[i]
-    elif y == "5성":
+    elif y == "5성" or y == "5":
         for i in hotel_n_money.keys():
             if hotel_n_rooms[i] >= 200:
                 star5[i] = hotel_n_money[i]
@@ -156,10 +156,10 @@ def betterprice(x,y,z): #해당도시 해당성급의 최고가or최저가 호�
         list_3 = []
 
         for i in open("제주관광호텔업.txt", 'r', encoding='UTF-8').readlines():
-            if x == "제주시":
+            if x == "제주시" or x == "제주":
                 if "관광호텔업" and "도 제주시" in i:
                     list_1.append(i)
-            elif x == "서귀포시":
+            elif x == "서귀포시" or x == "서귀포":
                 if "관광호텔업" and "도 서귀포시" in i:
                     list_1.append(i)
         for i in list_1:
@@ -174,53 +174,54 @@ def betterprice(x,y,z): #해당도시 해당성급의 최고가or최저가 호�
     hoteljeju_to_list()
     hotel_n_money = {hotelname: roomcount for hotelname, roomcount in zip(hotel, list(map(int, money)))}
     hotel_n_rooms = {hotelname: roomcount for hotelname, roomcount in zip(hotel, list(map(int, rooms)))}
-    if y == "1성":
+    if y == "1성" or y == "1":
         for i in hotel_n_money.keys():
             if hotel_n_rooms[i] < 50:
                 star1[i] = hotel_n_money[i]
-    elif y == "2성":
+    elif y == "2성" or y == "2":
         for i in hotel_n_money.keys():
             if 50 <= hotel_n_rooms[i] < 100:
                 star2[i] = hotel_n_money[i]
-    elif y == "3성":
+    elif y == "3성" or y == "3":
         for i in hotel_n_money.keys():
             if 100 <= hotel_n_rooms[i] < 150:
                 star3[i] = hotel_n_money[i]
-    elif y == "4성":
+    elif y == "4성" or y == "4":
         for i in hotel_n_money.keys():
             if 150 <= hotel_n_rooms[i] < 200:
                 star4[i] = hotel_n_money[i]
-    elif y == "5성":
+    elif y == "5성" or y == "5":
         for i in hotel_n_money.keys():
             if hotel_n_rooms[i] >= 200:
                 star5[i] = hotel_n_money[i]
     merged = {**star1, **star2, **star3, **star4, **star5}
+    def low_or_high(maxormin):
+        list1 = []
+        list2 = []
+        list3 = []
+        name = []
+        pay = []
+        for i in merged.items():
+            list1.append(list(i))
+            list2.append(i[1])
+        a = maxormin(list2)
+        for i in list1:
+            if a in i:
+                list3.append(i)
+        for i in sum(list3, []):
+            if type(i) is str:
+                name.append(i)
+            else:
+                pay.append(i)
+        dict_list = dict(zip(name, pay))
+        for k, v in dict_list.items():
+            print("{} : {}".format(k, v))
     while True:
-        if z=="최저가":
-            list1 = []
-            list2 = []
-            list3 = []
-            for i in merged.items():
-                list1.append(list(i))
-                list2.append(i[1])
-            a = min(list2)
-            for i in list1:
-                if a in i:
-                    list3.append(i)
-            print(list3)
+        if z=="최저가" or z=="최저":
+            low_or_high(min)
             break
-        elif z=="최고가":
-            list1 = []
-            list2 = []
-            list3 = []
-            for i in merged.items():
-                list1.append(list(i))
-                list2.append(i[1])
-            a = max(list2)
-            for i in list1:
-                if a in i:
-                    list3.append(i)
-            print(list3)
+        elif z=="최고가" or z=="최고":
+            low_or_high(max)
             break
 #해당도시 해당성급의 최고가or최저가 호텔 #매개변수(x:도시명,y:성급,z:최고가or최저가)
 
@@ -278,13 +279,9 @@ if __name__=="__main__":
         while True:
             print("*" * 100)
             price=input("해당 호텔 중 최저가 or 최고가 가격을 보시겠습니까?(최저가/최고가):")
-            if price=="최저가":
+            if price=="최저가" or price=="최고가":
                 print("*" * 100)
-                print("최저가호텔"),betterprice(city,star,price)
-                print("*" * 100)
-            elif price=="최고가":
-                print("*" * 100)
-                print("최고가호텔"),betterprice(city, star, price)
+                print("%s 호텔" % price),betterprice(city,star,price)
                 print("*" * 100)
             else:
                 print("잘못 입력하셨습니다. 다시 입력해주세요.")
